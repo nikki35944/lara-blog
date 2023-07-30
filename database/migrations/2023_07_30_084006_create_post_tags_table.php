@@ -20,12 +20,12 @@ return new class extends Migration
             $table->timestamps();
 
             //idx
-            $table->index('category_id', 'post_category_idx');
-            $table->index('category_id', 'post_category_idx');
+            $table->index('post_id', 'post_tag_post_idx');
+            $table->index('tag_id', 'post_tag_tag_idx');
 
             //fk
-            $table->foreign('category_id', 'post_category_fk')->on('categories')->references('id');
-            $table->foreign('category_id', 'post_category_fk')->on('categories')->references('id');
+            $table->foreign('post_id', 'post_tag_post_fk')->on('posts')->references('id');
+            $table->foreign('tag_id', 'post_tag_tag_fk')->on('tags')->references('id');
         });
     }
 
