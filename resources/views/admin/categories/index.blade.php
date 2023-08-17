@@ -46,7 +46,11 @@
                                     <tr>
                                         <td>{{ $category->id }}</td>
                                         <td>{{ $category->title }}</td>
-                                        <td><a href="{{ route('admin.category.show', $category->id) }}"><i class="fas fa-regular fa-eye"></i></a></td>
+                                        <td>
+                                            <a href="{{ route('admin.category.show', $category->id) }}"><i class="fas fa-regular fa-eye"></i></a>
+                                            <a href="{{ route('admin.category.edit', $category->id) }}" class="ml-2"><i class="fas fa-edit"></i></a>
+
+                                        </td>
                                     </tr>
                                     @endforeach
                                     </tbody>
