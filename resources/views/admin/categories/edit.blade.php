@@ -25,15 +25,15 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-6 mt-2">
-                        <form action="#" method="POST">
+                        <form action="{{ route('admin.category.update', $category->id) }}" method="POST">
                             @csrf
+                            @method('PATCH')
                             <div class="form-group">
                                 <label>Название категории</label>
                                 <input type="text" class="form-control" name="title" placeholder="Название категории"
                                 value="{{ $category->title }}">
                                 @error('title')
                                 <div class="text-danger">Это поле необходимо для заполнения {{ $message }}</div>
-
                                 @enderror
                                 <input type="submit" class="btn btn-primary mt-1" value="Обновить">
                             </div>
