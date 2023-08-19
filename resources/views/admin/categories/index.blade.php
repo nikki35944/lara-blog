@@ -49,6 +49,11 @@
                                         <td>
                                             <a href="{{ route('admin.category.show', $category->id) }}"><i class="fas fa-regular fa-eye"></i></a>
                                             <a href="{{ route('admin.category.edit', $category->id) }}" class="ml-2"><i class="fas fa-edit"></i></a>
+                                            <form action="{{ route('admin.category.delete', $category->id) }}" method="POST" class="ml-2 d-inline-flex text-danger">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="bg-transparent border-0 text-danger"><i class="fas fa-trash"></i></button>
+                                            </form>
 
                                         </td>
                                     </tr>
